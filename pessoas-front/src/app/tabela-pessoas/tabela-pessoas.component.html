@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="header">
+    
+    <mat-form-field appearance="outline" class="filter-field">
+      <input 
+        matInput 
+        [(ngModel)]="filtroNome" 
+        (input)="filtrarPorNome()" 
+        placeholder="Digite o nome...">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <button 
+      mat-raised-button 
+      color="primary" 
+      (click)="carregarPessoas()"
+      class="reload-button">
+      <mat-icon>refresh</mat-icon>
+      Recarregar
+    </button>
+  </div>
+  <table mat-table [dataSource]="pessoasFiltradas" class="mat-elevation-z8">
+    <ng-container *ngFor="let coluna of displayedColumns" [matColumnDef]="coluna">
+      <th mat-header-cell *matHeaderCellDef>{{ coluna | titlecase }}</th>
+      <td mat-cell *matCellDef="let pessoa">{{ pessoa[coluna] }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <div class="paginacao">
+    <button 
+      mat-button 
+      (click)="mudarPagina(-1)" 
+      [disabled]="paginaAtual === 1">
+      <mat-icon>chevron_left</mat-icon> Anterior
+    </button>
+    
+    <span class="paginacao-texto">Página {{ paginaAtual }} de {{ totalPaginas }}</span>
+    
+    <button 
+      mat-button 
+      (click)="mudarPagina(1)" 
+      [disabled]="paginaAtual === totalPaginas">
+      Próxima <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+</div>

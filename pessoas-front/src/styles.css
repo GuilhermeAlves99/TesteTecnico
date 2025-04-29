@@ -1,0 +1,31 @@
+/* styles.css */
+@use '@angular/material' as mat;
+
+/* Paleta pastel personalizada */
+$pastel-primary: mat.define-palette(mat.$blue-palette, 100);  // Azul clarinho
+$pastel-accent: mat.define-palette(mat.$pink-palette, 50);    // Rosa bebê
+$pastel-warn: mat.define-palette(mat.$red-palette, 100);      // Vermelho suave
+
+/* Criar tema pastel */
+$pastel-theme: mat.define-light-theme((
+  color: (
+    primary: $pastel-primary,
+    accent: $pastel-accent,
+    warn: $pastel-warn,
+  )
+));
+
+/* Aplicar tema */
+@include mat.all-component-themes($pastel-theme);
+
+/* Ajustes extras */
+body {
+  background-color: #fafafa;  /* Fundo branco suave */
+  color: #212121;            /* Texto escuro para contraste */
+}
+
+.mat-card {
+  background-color: white;   /* Fundo branco puro para cards */
+  border-radius: 12px !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+}

@@ -1,0 +1,46 @@
+:host {
+    --pastel-primary: #B3E5FC;  
+    --pastel-accent: #FFCDD2;   
+    --pastel-warn: #FFCCBC;     
+    --text-dark: #212121;       
+    --background-light: #FAFAFA; 
+  }
+
+  .mat-toolbar {
+    background-color: var(--pastel-primary) !important;
+    color: var(--text-dark) !important;
+  }
+  
+  .mat-raised-button[color="accent"] {
+    background-color: var(--pastel-accent) !important;
+    color: var(--text-dark) !important;
+  }
+  
+  .mat-card {
+    background: white !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 10px rgb(255, 255, 255) !important;
+  }
+  
+  .content {
+    padding: 24px;
+    background-color: var(--background-light);
+    min-height: calc(100vh - 64px);
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  .card-title {
+    color: #ffffff;
+    font-weight: 500;
+  }
+  
+  .mat-card-subtitle {
+    color: rgb(255, 255, 255);
+  }
+  
+  .mat-icon-button:hover .mat-icon {
+    color: var(--pastel-accent);
+  }
