@@ -12,7 +12,7 @@ ________________________________________________________________________________
   ### - Abra o prompt e digite "npm install";
   ### - Em seguida digite "ng serve" para rodar o front;
 _________________________________________________________________________________________________________________________________________
-## 4. caso o front esteja respondendo com um erro (404):
+## 4. caso o front esteja respondendo com um erro:
   ### - abra o projeto "pessoas-front"
   ### - vá na pasta environments (pessoas-front > src > environment > environments.ts)
   ### - confira se a rota mostrada nessa pasta (ex: http://localhost:5000/api) é a mesma rota mostrada no terminal ao executar o backend
